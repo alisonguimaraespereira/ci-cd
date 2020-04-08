@@ -45,6 +45,11 @@ m4tegpljd7x9        devsecops_prometheus   replicated          1/1              
 
 ## Access Services in Browser
 
+To access Jenkins interface on browser:
+```
+http://YOUR_IP:8080
+```
+
 To access Prometheus interface on browser:
 ```
 http://YOUR_IP:9090
