@@ -1,0 +1,51 @@
+version: '3.3'
+
+services:
+
+  prometheus:
+    image: linuxtips/prometheus_alpine
+    volumes:
+      - ./conf/prometheus/:/etc/prometheus/
+      - prometheus_data:/var/lib/prometheus
+    networks:
+      - backend
+    ports:
+      - 9090:9090
+
+  jenkins:
+    image: jenkins-master
+    restart: always
+    container_name: jenkins
+    ports:
+      - '8080:8080'
+      - '443:8443'
+      - '50000:50000'
+    networks:
+      - backend
+      - frontend
+    volumes:
+      - 'jenkins_data:/jenkins_config'
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  grafana:
+    image: grafana/grafana
+    volumes:
+      - grafana_data:/var/lib/grafana
+    env_file:
+      - grafana.config
+    networks:
+      - backend
+      - frontend
+    ports:
+      - 3000:3000
+
+networks:
+  frontend:
+  backend:
+
+volumes:
+    prometheus_data:
+    grafana_data:
+    rocket_uploads:
+    mongodb_data:
+    jenkins_data:
