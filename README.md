@@ -48,6 +48,8 @@ m4tegpljd7x9        devsecops_prometheus   replicated          1/1              
 To access Jenkins interface on browser:
 ```
 http://YOUR_IP:8080
+user: admin
+passwd: devsecops
 ```
 
 To access Prometheus interface on browser:
