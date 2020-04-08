@@ -1,12 +1,12 @@
-# CI / CD
-Full stack tools for monitoring pipeline and other stuff. ;)
+# DEVSECOPS ENVIRONMENT
+Full stack tools for testing the local devsecops environmentand other stuff.
 - Prometheus
 - Docker
 - Grafana
 - Jenkins
 
 
-# Howto
+# How to
 First of all, clone the ci-cd repo:
 ```
 # git clone https://github.com/guimaraesasp/ci-cd.git
@@ -54,24 +54,9 @@ To access Grafana interface on browser:
 ```
 http://YOUR_IP:3000
 user: admin
-passwd: admin
+passwd: devsecops
 
 To add plugs edit file ci-cd/grafana.config
 GF_INSTALL_PLUGINS=plug1,plug2
-Current plugs grafana-clock-panel,grafana-piechart-panel,camptocamp-prometheus-alertmanager-datasource,vonage-status-panel
 ```
-Have fun, access the dashboards! ;)
-
-To access Prometheus Node_exporter metrics on browser:
-```
-http://YOUR_IP:9100/metrics
-```
-
-Test if your alerts are ok:
-```
-# docker service rm giropops_node-exporter
-
-Wait some seconds and you will see the integration works fine! Prometheus alerting the AlertManager that alert the Slack that shows it to you! It's so easy and that simple! :D
-```
-
 
