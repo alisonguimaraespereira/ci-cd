@@ -1,5 +1,5 @@
 # DEVSECOPS ENVIRONMENT
-Full stack tools for testing the local devsecops environmentand other stuff.
+Full stack tools for testing the local devsecops environment and other stuff.
 - Prometheus
 - Docker
 - Grafana
